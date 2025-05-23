@@ -37,8 +37,11 @@ p ∧ q
 (p ∨ q) → r
 ¬(p ∧ q) ↔ (¬p ∨ ¬q)
 
-🔧 Installation & Local Setup
+🔧 Installation & Local Setup:
+
 git clone https://github.com/sumeet156/TruthTableGenerator.git
 
-📸 Screenshots
+📸 Screenshots:
+![Truth Table](TruthTable.png)
+
 
