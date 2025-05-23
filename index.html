@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth Table Generator</title>
+    <link rel="icon" type="image/png" href="/assets/moon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Truth Table Generator</h1>
+            <p class="subtitle">Visualize logical expressions with ease</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="expression">Logical Expression:</label>
+                    <div class="input-with-buttons">
+                        <input type="text" id="expression" placeholder="e.g., (A ∧ B) ∨ C" autocomplete="off">
+                        <button id="clear-btn" class="icon-btn" title="Clear">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <button id="generate-btn" class="primary-btn">Generate</button>
+                    </div>
+                </div>
+
+                <div class="operators-section">
+                    <p class="section-title">Available Operators</p>
+                    <div class="operator-buttons">
+                        <button class="operator-btn" data-operator="¬">¬ (NOT)</button>
+                        <button class="operator-btn" data-operator="∧">∧ (AND)</button>
+                        <button class="operator-btn" data-operator="∨">∨ (OR)</button>
+                        <button class="operator-btn" data-operator="→">→ (IMPLIES)</button>
+                        <button class="operator-btn" data-operator="↔">↔ (IFF)</button>
+                        <button class="operator-btn" data-operator="⊕">⊕ (XOR)</button>
+                        <button class="operator-btn" data-operator="(">( )</button>
+                    </div>
+                </div>
+
+                <div class="examples-section">
+                    <p class="section-title">Example Expressions</p>
+                    <div class="example-buttons">
+                        <button class="example-btn" data-expr="A ∧ B">A ∧ B</button>
+                        <button class="example-btn" data-expr="A ∨ B">A ∨ B</button>
+                        <button class="example-btn" data-expr="¬A">¬A</button>
+                        <button class="example-btn" data-expr="A → B">A → B</button>
+                        <button class="example-btn" data-expr="(A ∧ B) ∨ C">(A ∧ B) ∨ C</button>
+                        <button class="example-btn" data-expr="A ↔ (B ⊕ C)">A ↔ (B ⊕ C)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-header">
+                    <h2>Truth Table</h2>
+                    <div class="output-actions">
+                        <button id="copy-btn" class="icon-btn" title="Copy to Clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button id="download-btn" class="icon-btn" title="Download as CSV">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="truth-table">
+                        <thead>
+                            <tr id="table-header"></tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+
+                <div id="error-message" class="error-message hidden"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Truth Table Generator | Created by Sumeet Choudhary 😸</p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
